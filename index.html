@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>St Lucia's Cathedral Media Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* ===================== GLOBAL ===================== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#070707;
+color:white;
+overflow-x:hidden;
+}
+
+/* ===================== NAV ===================== */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:14px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(20px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:42px;
+height:42px;
+object-fit:contain;
+}
+
+.logo h2{
+font-family:'Cinzel',serif;
+font-size:0.9rem;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul li a{
+color:#ddd;
+text-decoration:none;
+font-size:0.9rem;
+}
+
+nav ul li a:hover{
+color:#d4af37;
+}
+
+/* ===================== HERO ===================== */
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+z-index:2;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:18px;
+}
+
+.hero-content img{
+width:110px;
+height:110px;
+border-radius:50%;
+object-fit:contain;
+box-shadow:0 0 40px rgba(212,175,55,0.4);
+}
+
+.hero-content h1{
+font-family:'Cinzel',serif;
+font-size:2.6rem;
+line-height:1.3;
+}
+
+.hero-content p{
+color:#d4af37;
+letter-spacing:3px;
+}
+
+/* ===================== SECTIONS ===================== */
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-family:'Cinzel',serif;
+font-size:2.5rem;
+}
+
+/* ===================== ABOUT ===================== */
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about p{
+color:#ccc;
+line-height:2;
+}
+
+/* ===================== FEATURED ===================== */
+.featured{
+background:#0e0e0e;
+border-radius:20px;
+padding:60px;
+text-align:center;
+margin-bottom:60px;
+}
+
+.featured h3{
+font-family:'Cinzel',serif;
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.featured p{
+color:#aaa;
+}
+
+/* ===================== MEDIA GRID ===================== */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
+
+.card{
+background:#111;
+border-radius:15px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+border-color:#d4af37;
+}
+
+.card iframe{
+width:100%;
+height:220px;
+border:none;
+}
+
+.card p{
+padding:12px;
+color:#ccc;
+}
+
+/* ===================== CONTACT ===================== */
+.contact{
+text-align:center;
+background:#111;
+border-radius:20px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.socials a{
+width:50px;
+height:50px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+background:#222;
+color:white;
+transition:0.3s;
+}
+
+.socials a:hover{
+background:#d4af37;
+transform:translateY(-5px);
+}
+
+/* ===================== MOBILE ===================== */
+@media(max-width:900px){
+nav ul{display:none;}
+.hero-content h1{font-size:1.8rem;}
+.about{grid-template-columns:1fr;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+
+<div class="logo">
+<img src="images/logo.png">
+<h2>ST LUCIAS MEDIA</h2>
+</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#media">Media</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<video autoplay muted loop playsinline>
+<source src="videos/intro.mp4">
+</video>
+
+<div class="hero-content">
+
+<img src="images/logo.png">
+
+<h1>MEDIA CIRCLE OF<br>ST LUCIA'S CATHEDRAL</h1>
+
+<p>OFFICIAL MEDIA PORTAL</p>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+<img src="images/logo.png">
+
+<div>
+
+<h2 class="section-title">ABOUT THE MINISTRY</h2>
+
+<p>
+The Media Circle of St Lucia’s Cathedral functions as the official media production unit of the cathedral, responsible for documenting liturgical celebrations, producing cinematic church content, livestreaming sacred events, and preserving the spiritual heritage through modern digital storytelling.
+</p>
+
+</div>
+
+</section>
+
+<!-- FEATURED -->
+<section>
+
+<div class="featured">
+
+<h3>Official Media Department</h3>
+<p>Photography • Cinematography • Drone • Live Streaming</p>
+
+</div>
+
+</section>
+
+<!-- MEDIA GRID -->
+<section id="media">
+
+<div class="section-title">
+<h2>Media Archive</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/DNRhLFvlapA"></iframe>
+<p>Live Holy Mass</p>
+</div>
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/8UCsGJgVNo0"></iframe>
+<p>Drone Cinematic Film</p>
+</div>
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/ctu8F_H0P5c"></iframe>
+<p>Live Stream Event</p>
+</div>
+
+<div class="card">
+<iframe src="https://www.youtube.com/embed/bocj1DEtkFw"></iframe>
+<p>Short Film Production</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+<h2 class="section-title">Official Contact</h2>
+
+<div class="socials">
+
+<a href="https://web.facebook.com/stluciascathedralofficial"><i class="fab fa-facebook-f"></i></a>
+
+<a href="https://www.instagram.com/_mcslc_"><i class="fab fa-instagram"></i></a>
+
+<a href="https://www.tiktok.com/@mcslc.cathedral"><i class="fab fa-tiktok"></i></a>
+
+<a href="https://www.youtube.com/channel/UCGI5A9BhZLYxeQuGndDRbKA"><i class="fab fa-youtube"></i></a>
+
+</div>
+
+</section>
+
+</body>
+</html>
